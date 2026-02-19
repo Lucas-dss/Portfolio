@@ -109,6 +109,7 @@ header nav ul {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style: none;
 }
 
@@ -138,6 +139,7 @@ header .btn-aparencia {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 header .btn-aparencia:hover {
@@ -150,8 +152,7 @@ header .btn-aparencia img {
 }
 
 .dark-btn-aparencia {
-  /* filter: invert(1); */
-  rotate: 360deg;
+  transform: rotate(720deg);
 }
 
 main {
@@ -168,20 +169,37 @@ main section {
 }
 
 .apresentacao-section {
-  background-image: url(https://images.unsplash.com/photo-1623018034840-2434c8403b94?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8);
+  position: relative;
+  background-image: url(./img/bg1.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
+  box-shadow: inset 0 0 100px 100px #000;
   margin-top: 57px;
 }
 
+.apresentacao-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: invert(0);
+  transition: filter 0.5s ease-in;
+}
+
+.apresentacao-section * {
+  z-index: 1;
+}
+
 .dark-apresentacao {
-  box-shadow: inset 0 0 100px 100px rgb(255, 255, 255);
+  box-shadow: inset 0 0 100px 100px #fff;
+}
+
+.dark-apresentacao::before {
+  filter: invert(1);
 }
 
 main section h1 {
   text-align: center;
-  margin-bottom: 20px;
   color: #ffffffcb;
 }
 
@@ -203,7 +221,7 @@ main section .apresentacao-div img {
   border-radius: 50%;
   border: 4px solid var(--cor-secundaria);
   background: linear-gradient(0deg, #84939c, #0c0c0d85);
-  box-shadow: inset 0 0 100px 10px rgb(0, 0, 0);
+  box-shadow: inset 0 0 100px 10px #000;
   filter: contrast(1.75);
 }
 
@@ -218,28 +236,56 @@ main section .apresentacao-container .titulo_bem_vindo {
   min-width: 430px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dark-h1-apresentacao {
+  color: #000000cb;
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
 }
 
 main section .apresentacao-container .titulo_bem_vindo span {
   margin-left: 9px;
   font-size: 2em;
   font-weight: bold;
-  color: var(--cor-secundaria);
+  color: #fff;
+  background-color: var(--cor-secundaria);
 }
 
-main section .apresentacao-container p {
-  background-color: #000000ad;
+.dark-p-apresentacao {
+  color: #000000a1;
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
 }
 
 .sobre {
-  background-image: url(https://img.freepik.com/foto-gratis/primer-plano-teclado-computadora-negro_53876-32345.jpg);
+  position: relative;
+  background-image: url(./img/bg2.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
+  box-shadow: inset 0 0 100px 100px #000;
+}
+
+.sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: invert(0);
+  transition: filter 0.5s ease-in;
+}
+
+.sobre * {
+  z-index: 1;
 }
 
 .dark-sobre {
-  box-shadow: inset 0 0 100px 100px rgb(255, 255, 255);
+  box-shadow: inset 0 0 100px 100px #fff;
+}
+
+.dark-sobre::before {
+  filter: invert(1);
 }
 
 main section .sobre-container {
@@ -258,12 +304,26 @@ main section .sobre-container div {
 }
 
 .dark-h1-sobre {
-  background-color: #000000ad;
+  color: #000000d2;
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
 }
 
 main section .sobre-container p {
   text-align: center;
-  background-color: #000000ad;
+  backdrop-filter: blur(4px);
+}
+
+.dark-p-sobre {
+  color: #000000d2;
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
+}
+
+main .projetos .titulo-projeto {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 main section .projetos-container {
@@ -275,32 +335,28 @@ main section .projetos-container {
 main section .projetos-container .projeto {
   width: 20%;
   height: 300px;
-  background: #e7e7e7;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: width 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 100px 100px #000;
+}
+
+.dark-projeto {
+  box-shadow: inset 0 0 100px 10px #fff;
 }
 
 main section .projetos-container .projeto:nth-child(1) {
   background-image: url(img/projetos/Levisse.png);
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
 }
 
 main section .projetos-container .projeto:nth-child(2) {
   background-image: url(img/projetos/SenaiSurc.png);
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
 }
 
 main section .projetos-container .projeto:nth-child(3) {
   background-image: url(img/projetos/PaytoPlay.png);
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
 }
 
 main section .projetos-container .projeto:hover {
@@ -320,11 +376,24 @@ main section .projetos-container .projeto p {
   margin-top: 10px;
 }
 
-#contato {
-  background-image: url(https://images.unsplash.com/photo-1414509613498-f53000d3d2c1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8);
+.contato {
+  background-image: url(./img/bg3.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px rgb(0, 0, 0);
+  box-shadow: inset 0 0 100px 100px #000;
+}
+.dark-contato {
+  box-shadow: inset 0 0 100px 100px #fff;
+}
+
+main .contato div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dark-h1-contato {
+  background-color: #000000ad;
 }
 
 main section form {
@@ -340,11 +409,15 @@ main section form label {
   position: relative;
   top: 33px;
   left: 10px;
-  color: #555555aa;
+  color: #afafafaa;
   transition:
     top 0.3s ease-in-out,
     left 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.dark-label {
+  color: #afafafaa;
 }
 
 main section form input,
@@ -362,6 +435,8 @@ main section form input:focus,
 textarea:focus {
   border-color: #afafaf;
   outline: none;
+  backdrop-filter: blur(1px);
+  transition: backdrop-filter 0.5s ease;
 }
 
 main section form button {
@@ -380,8 +455,79 @@ main section form button:hover {
 }
 
 footer {
-  background: #000000;
-  color: #ffffff;
+  background: #000;
+  color: #fff;
   text-align: center;
   padding: 10px 0;
+}
+
+.dark-footer {
+  background: #fff;
+  color: #000;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+  header nav {
+    width: auto;
+  }
+}
+
+/* celular */
+@media screen and (max-width: 767px) {
+  header .btn-aparencia {
+    height: 20px;
+    width: 20px;
+  }
+  header .btn-aparencia img {
+    height: 10px;
+    width: 10px;
+  }
+  header h1 {
+    width: min-content;
+    font-size: 1em;
+  }
+  header nav {
+    width: auto;
+  }
+  header nav ul li {
+    margin: 0 2px;
+    font-size: 10px;
+  }
+  main section .apresentacao-div img {
+    width: 10em; /* font-size 1em = 10px on default browser settings */
+    height: 10em;
+  }
+  main section .apresentacao-container .titulo_bem_vindo {
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main section h1 {
+    margin-bottom: 0;
+  }
+  main section .apresentacao-container p {
+    text-align: center;
+  }
+  main section .projetos-container .projeto img {
+    height: 6em;
+  }
+  main .projetos .projetos-container .projeto .projeto-detalhes h1 {
+    font-size: 0.8em;
+    margin-top: 1em;
+  }
+  main section .projetos-container .projeto p {
+    max-height: 100px;
+  }
+  main section .projetos-container .projeto:hover {
+    width: 20%;
+  }
+  main section form {
+    padding: 2em 2em;
+  }
 }

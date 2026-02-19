@@ -104,9 +104,21 @@ const btn_aparencia_icon = document.querySelector(".btn-aparencia img");
 // main
 const apresentacao = document.querySelector(".apresentacao-section");
 const titulo_bem_vindo = document.querySelector(".titulo_bem_vindo h1");
+const p_apresentacao = document.querySelector(
+  "main section .apresentacao-container p",
+);
 const sobre = document.querySelector(".sobre");
 const h1_sobre = document.querySelector("main .sobre h1");
+const p_sobre = document.querySelector("main section .sobre-container p");
 const h1_projetos = document.querySelector("main .projetos h1");
+let projetos = document.querySelectorAll(
+  "main .projetos .projetos-container .projeto",
+);
+const contato = document.querySelector("main .contato");
+const h1_contato = document.querySelector("main .contato h1");
+let labels_contato = document.querySelectorAll("main section form label");
+// footer
+const footer = document.querySelector("footer");
 
 function add_aparencia(elemento, css) {
   elemento.classList.add(css);
@@ -129,9 +141,22 @@ function tema_escuro() {
   remove_aparencia(button_aparencia, "dark-btn-aparencia");
   // main
   remove_aparencia(apresentacao, "dark-apresentacao");
+  remove_aparencia(titulo_bem_vindo, "dark-h1-apresentacao");
+  remove_aparencia(p_apresentacao, "dark-p-apresentacao");
   remove_aparencia(sobre, "dark-sobre");
-  remove_aparencia(h1_projetos, "dark-h1-projetos");
   remove_aparencia(h1_sobre, "dark-h1-sobre");
+  remove_aparencia(p_sobre, "dark-p-sobre");
+  remove_aparencia(h1_projetos, "dark-h1-projetos");
+  projetos.forEach((projeto) => {
+    remove_aparencia(projeto, "dark-projeto");
+  });
+  remove_aparencia(contato, "dark-contato");
+  remove_aparencia(h1_contato, "dark-h1-contato");
+  labels_contato.forEach((label) => {
+    remove_aparencia(label, "dark-label");
+  });
+  // footer
+  remove_aparencia(footer, "dark-footer");
 }
 
 function tema_claro() {
@@ -146,9 +171,22 @@ function tema_claro() {
   add_aparencia(button_aparencia, "dark-btn-aparencia");
   // main
   add_aparencia(apresentacao, "dark-apresentacao");
+  add_aparencia(titulo_bem_vindo, "dark-h1-apresentacao");
+  add_aparencia(p_apresentacao, "dark-p-apresentacao");
   add_aparencia(sobre, "dark-sobre");
-  add_aparencia(h1_projetos, "dark-h1-projetos");
   add_aparencia(h1_sobre, "dark-h1-sobre");
+  add_aparencia(p_sobre, "dark-p-sobre");
+  add_aparencia(h1_projetos, "dark-h1-projetos");
+  projetos.forEach((projeto) => {
+    add_aparencia(projeto, "dark-projeto");
+  });
+  add_aparencia(contato, "dark-contato");
+  add_aparencia(h1_contato, "dark-h1-contato");
+  labels_contato.forEach((label) => {
+    add_aparencia(label, "dark-label");
+  });
+  // footer
+  add_aparencia(footer, "dark-footer");
 }
 
 let tema_atual = localStorage.getItem("tema_atual");
@@ -181,6 +219,7 @@ inputs_contato.forEach((input) => {
     if (label) {
       label.style.top = "0";
       label.style.left = "0";
+      label.style.color = "#555555aa";
     }
   });
   // Adiciona um evento de blur para os inputs
@@ -190,6 +229,7 @@ inputs_contato.forEach((input) => {
     if (label && !input.value) {
       label.style.top = "33px";
       label.style.left = "10px";
+      label.style.color = "#afafafaa";
     }
   });
 });
@@ -200,6 +240,7 @@ document.querySelectorAll("main section form textarea").forEach((textarea) => {
     if (label) {
       label.style.top = "0";
       label.style.left = "0";
+      label.style.color = "#555555aa";
     }
   });
   // Adiciona um evento de blur para o textarea
@@ -208,6 +249,7 @@ document.querySelectorAll("main section form textarea").forEach((textarea) => {
     if (label && !textarea.value) {
       label.style.top = "33px";
       label.style.left = "10px";
+      label.style.color = "#afafafaa";
     }
   });
 });

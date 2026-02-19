@@ -6,7 +6,6 @@
     <title>Portfólio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="img/icons/portfolio.png" />
-    <meta name="google-site-verification" content="35ASiHPb02DexfYXW3Nivm_fFIglSX9wC-kcBOmG9X8" />
   </head>
 
   <body>
@@ -73,7 +72,9 @@
       <br id="projetos" />
       <!-- Seção Projetos -->
       <section class="projetos">
-        <h1 class="lang" data-key="titulo_projetos">Projetos</h1>
+        <div class="titulo-projeto">
+          <h1 class="lang" data-key="titulo_projetos">Projetos</h1>
+        </div>
         <div class="projetos-container">
           <div class="projeto">
             <div class="projeto-detalhes">
@@ -111,8 +112,10 @@
         </div>
       </section>
       <!-- Seção de Contato -->
-      <section id="contato">
-        <h1 class="lang" data-key="titulo_contato">Contato</h1>
+      <section class="contato" id="contato">
+        <div>
+          <h1 class="lang" data-key="titulo_contato">Contato</h1>
+        </div>
         <form method="post" action="https://formspree.io/f/xykdjrey">
           <label for="name" class="lang" data-key="label_nome">Nome:</label>
           <input
