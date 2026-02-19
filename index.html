@@ -1,98 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/icons/portfolio.png" />
+  </head>
 
-<body>
+  <body>
     <header>
-        Lucas da Silva Sousa
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+      <div class="btns-lingua">
+        <button class="btn-lingua" data-lang="en"></button>
+        <p>|</p>
+        <button class="btn-lingua" data-lang="pt-br"></button>
+      </div>
+      <h1><a href="#apresentacao">Lucas da Silva Sousa</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#sobre" class="lang" data-key="sobre_mim">Sobre Mim</a>
+          </li>
+          <li>
+            <a href="#projetos" class="lang" data-key="projetos">Projetos</a>
+          </li>
+          <li>
+            <a href="#contato" class="lang" data-key="contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="btn-aparencia">
+        <img src="img/icons/sun.png" alt="botão de alterar a aparência/tema" />
+      </button>
     </header>
     <main>
-        <!-- Seção de Apresentação -->
-        <section id="apresentacao">
-            <div class="apresentacao">
-                <img src="img/Imagem_do_WhatsApp_de_2025-08-06_à_s__16.46.22_c67c3911-removebg-preview.png" alt="Uma foto minha">
-                <div class="apresentacao-container">
-                    <h1>Bem-vindo ao meu portfólio</h1>
-                    <p>Este é um espaço para mostrar meus projetos e habilidades.</p>
-                </div>
+      <!-- Seção de Apresentação -->
+      <section class="apresentacao-section" id="apresentacao">
+        <div class="apresentacao-div">
+          <img src="img/foto_perfil.png" alt="Foto de Perfil" />
+          <div class="apresentacao-container">
+            <div class="titulo_bem_vindo">
+              <h1 class="lang" data-key="titulo_bem_vindo">Bem-vindo ao meu</h1>
+              <span class="lang" data-key="titulo_bem_vindo_portfolio">
+                portfólio
+              </span>
             </div>
-        </section>
-        <!-- Seção Sobre Mim -->
-        <section id="sobre">
-            <div class="sobre-container">
-                <h1>Sobre Mim</h1>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p class="lang" data-key="descricao_bem_vindo">
+              Este é um espaço para mostrar meus projetos e habilidades.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Seção Sobre Mim -->
+      <section class="sobre" id="sobre">
+        <div class="sobre-container">
+          <div>
+            <h1 class="lang" data-key="titulo_sobre_mim">Sobre Mim</h1>
+          </div>
+          <p class="lang" data-key="descricao_sobre_mim">
+            Sou um desenvolvedor web experiente com 2 anos de atuação no setor,
+            especializado na criação de soluções digitais. Tenho conhecimento
+            aprofundado no front-end, o que me permite atuar em projetos de
+            forma integral. Meu objetivo é continuar a desenvolver aplicações de
+            alto desempenho que resolvam problemas complexos e melhorem a
+            experiência do usuário. Estou sempre em busca de novos desafios e
+            oportunidades para aplicar minhas habilidades e conhecimentos em
+            projetos inovadores.
+          </p>
+        </div>
+      </section>
+      <br id="projetos" />
+      <!-- Seção Projetos -->
+      <section class="projetos">
+        <h1 class="lang" data-key="titulo_projetos">Projetos</h1>
+        <div class="projetos-container">
+          <div class="projeto">
+            <div class="projeto-detalhes">
+              <a href="https://lucas-dss.github.io/Levisse/pages/">
+                <img src="img/projetos/Levisse.png" alt="Levisse"
+              /></a>
+              <h1>Levisse</h1>
+              <p class="lang" data-key="descricao_projeto1">
+                Um e-commerce de perfumes de todos os tipos.
+              </p>
             </div>
-        </section>
-        <!-- Seção Projetos -->
-        <section id="projetos">
-            <h1>Projetos</h1>
-            <div class="projetos-container">
-                <div class="projeto">
-                    <div class="projeto-detalhes">
-                        <img src="img/Levisse.png" alt="Levisse">
-                        <h1>Levisse</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="projeto">
-                    <div class="projeto-detalhes">
-                        <img src="img/SenaiSurc.png" alt="SenaiSurc">
-                        <h1>SenaiSurc</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="projeto">
-                    <div class="projeto-detalhes">
-                        <img src="img/PaytoPlay.png" alt="PaytoPlay">
-                        <h1>PaytoPlay</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
+          </div>
+          <div class="projeto">
+            <div class="projeto-detalhes">
+              <a href="https://lucas-dss.github.io/SenaiSerc/public/pages/">
+                <img src="img/projetos/SenaiSurc.png" alt="SenaiSurc" />
+              </a>
+              <h1>SenaiSurc</h1>
+              <p class="lang" data-key="descricao_projeto2">
+                Um site para transporte público.
+              </p>
             </div>
-        </section>
-        <!-- Seção de Contato -->
-        <section id="contato">
-            <h1>Contato</h1>
-            <form method="post" action="script.php">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" autocomplete="off" required>
+          </div>
+          <div class="projeto">
+            <div class="projeto-detalhes">
+              <a href="https://lucas-dss.github.io/pay2play/">
+                <img src="img/projetos/PaytoPlay.png" alt="PaytoPlay"
+              /></a>
+              <h1>PaytoPlay</h1>
+              <p class="lang" data-key="descricao_projeto3">
+                e-commerce de jogos
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Seção de Contato -->
+      <section id="contato">
+        <h1 class="lang" data-key="titulo_contato">Contato</h1>
+        <form method="post" action="https://formspree.io/f/xykdjrey">
+          <label for="name" class="lang" data-key="label_nome">Nome:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            minlength="4"
+            maxlength="50"
+            autocomplete="off"
+            required
+          />
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" autocomplete="off" required>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="off"
+            required
+          />
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          <label for="message" class="lang" data-key="label_mensagem"
+            >Mensagem:</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            minlength="2"
+            maxlength="500"
+            autocomplete="off"
+            required
+          ></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+          <button type="submit" class="lang" data-key="button_enviar">
+            Enviar
+          </button>
+        </form>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+      <p class="lang" data-key="footer_copyright">
+        © 2026 Meu Portfólio. Todos os direitos reservados.
+      </p>
     </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
