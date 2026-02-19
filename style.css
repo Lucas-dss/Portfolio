@@ -150,7 +150,7 @@ header .btn-aparencia img {
 }
 
 .dark-btn-aparencia {
-  filter: invert(1);
+  /* filter: invert(1); */
   rotate: 360deg;
 }
 
