@@ -219,7 +219,6 @@ inputs_contato.forEach((input) => {
     if (label) {
       label.style.top = "0";
       label.style.left = "0";
-      label.style.color = "#555555aa";
     }
   });
   // Adiciona um evento de blur para os inputs
@@ -229,7 +228,6 @@ inputs_contato.forEach((input) => {
     if (label && !input.value) {
       label.style.top = "33px";
       label.style.left = "10px";
-      label.style.color = "#afafafaa";
     }
   });
 });
@@ -240,7 +238,6 @@ document.querySelectorAll("main section form textarea").forEach((textarea) => {
     if (label) {
       label.style.top = "0";
       label.style.left = "0";
-      label.style.color = "#555555aa";
     }
   });
   // Adiciona um evento de blur para o textarea
@@ -249,7 +246,6 @@ document.querySelectorAll("main section form textarea").forEach((textarea) => {
     if (label && !textarea.value) {
       label.style.top = "33px";
       label.style.left = "10px";
-      label.style.color = "#afafafaa";
     }
   });
 });

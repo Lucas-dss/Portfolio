@@ -32,10 +32,11 @@ html {
 body {
   font-family: "Arial", sans-serif;
   background-color: #000000;
+  min-width: 340px;
 }
 
 .dark-body {
-  background-color: #fff;
+  background-color: #dfdfdf;
 }
 
 header {
@@ -173,7 +174,6 @@ main section {
   background-image: url(./img/bg1.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px #000;
   margin-top: 57px;
 }
 
@@ -182,7 +182,10 @@ main section {
   position: absolute;
   inset: 0;
   background: inherit;
+  border: none;
+  border-radius: 12px;
   filter: invert(0);
+  box-shadow: inset 0 0 100px 100px #000;
   transition: filter 0.5s ease-in;
 }
 
@@ -195,7 +198,8 @@ main section {
 }
 
 .dark-apresentacao::before {
-  filter: invert(1);
+  border: 4px solid #4424129c;
+  filter: invert(0.75);
 }
 
 main section h1 {
@@ -222,7 +226,7 @@ main section .apresentacao-div img {
   border: 4px solid var(--cor-secundaria);
   background: linear-gradient(0deg, #84939c, #0c0c0d85);
   box-shadow: inset 0 0 100px 10px #000;
-  filter: contrast(1.75);
+  filter: contrast(1.5);
 }
 
 main section .apresentacao-container {
@@ -230,6 +234,7 @@ main section .apresentacao-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 main section .apresentacao-container .titulo_bem_vindo {
@@ -264,7 +269,6 @@ main section .apresentacao-container .titulo_bem_vindo span {
   background-image: url(./img/bg2.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px #000;
 }
 
 .sobre::before {
@@ -272,7 +276,10 @@ main section .apresentacao-container .titulo_bem_vindo span {
   position: absolute;
   inset: 0;
   background: inherit;
+  border: none;
+  border-radius: 12px;
   filter: invert(0);
+  box-shadow: inset 0 0 100px 100px #000;
   transition: filter 0.5s ease-in;
 }
 
@@ -285,13 +292,15 @@ main section .apresentacao-container .titulo_bem_vindo span {
 }
 
 .dark-sobre::before {
-  filter: invert(1);
+  border: 4px solid #4424129c;
+  filter: invert(0.75);
 }
 
 main section .sobre-container {
   max-width: 800px;
   height: 100%;
   margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -312,6 +321,7 @@ main section .sobre-container div {
 main section .sobre-container p {
   text-align: center;
   backdrop-filter: blur(4px);
+  overflow-y: auto;
 }
 
 .dark-p-sobre {
@@ -333,18 +343,45 @@ main section .projetos-container {
 }
 
 main section .projetos-container .projeto {
+  position: relative;
   width: 20%;
   height: 300px;
   padding: 20px;
+  border: none;
   border-radius: 10px;
   transition: width 0.5s ease-in-out;
   background-size: cover;
   background-position: center;
+}
+
+main section .projetos-container .projeto h1,
+main section .projetos-container .projeto p {
+  color: #000000d2;
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
+}
+
+.projeto::before {
+  content: "";
+  position: absolute;
+  inset: 1;
+  background: inherit;
+  filter: invert(0);
   box-shadow: inset 0 0 100px 100px #000;
+  transition: filter 0.5s ease-in;
+}
+
+.projeto * {
+  z-index: 1;
 }
 
 .dark-projeto {
+  border: 4px solid #4424129c;
   box-shadow: inset 0 0 100px 10px #fff;
+}
+
+.dark-projeto::before {
+  filter: invert(0.75);
 }
 
 main section .projetos-container .projeto:nth-child(1) {
@@ -377,13 +414,35 @@ main section .projetos-container .projeto p {
 }
 
 .contato {
+  position: relative;
   background-image: url(./img/bg3.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 100px 100px #000;
 }
+
+.contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  border: none;
+  border-radius: 12px;
+  filter: invert(0);
+  box-shadow: inset 0 0 100px 100px #000;
+  transition: filter 0.5s ease-in;
+}
+
+.contato * {
+  z-index: 1;
+}
+
 .dark-contato {
   box-shadow: inset 0 0 100px 100px #fff;
+}
+
+.dark-contato::before {
+  border: 4px solid #4424129c;
+  filter: invert(0.75);
 }
 
 main .contato div {
@@ -414,10 +473,11 @@ main section form label {
     top 0.3s ease-in-out,
     left 0.3s ease-in-out;
   cursor: pointer;
+  filter: invert(0);
 }
 
 .dark-label {
-  color: #afafafaa;
+  filter: invert(1);
 }
 
 main section form input,
@@ -497,6 +557,9 @@ footer {
     margin: 0 2px;
     font-size: 10px;
   }
+  main section .apresentacao-div {
+    flex-direction: column;
+  }
   main section .apresentacao-div img {
     width: 10em; /* font-size 1em = 10px on default browser settings */
     height: 10em;
@@ -515,14 +578,15 @@ footer {
     text-align: center;
   }
   main section .projetos-container .projeto img {
-    height: 6em;
+    height: 8em;
   }
   main .projetos .projetos-container .projeto .projeto-detalhes h1 {
     font-size: 0.8em;
     margin-top: 1em;
   }
   main section .projetos-container .projeto p {
-    max-height: 100px;
+    max-height: max-content;
+    word-wrap: break-word; /* Ou overflow-wrap: break-word; */
   }
   main section .projetos-container .projeto:hover {
     width: 20%;
