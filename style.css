@@ -342,6 +342,13 @@ main section .projetos-container {
   color: #ffffff9f;
 }
 
+main section .projetos-container .projeto-detalhes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 main section .projetos-container .projeto {
   position: relative;
   width: 20%;
@@ -534,6 +541,9 @@ footer {
   header nav {
     width: auto;
   }
+  main section .projetos-container .projeto {
+    width: 25%;
+  }
 }
 
 /* celular */
@@ -577,6 +587,21 @@ footer {
   main section .apresentacao-container p {
     text-align: center;
   }
+  main .projetos {
+    height: 900px;
+  }
+  main section .projetos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Applies 20px of space between all items */
+  }
+  main section .projetos-container .projeto {
+    width: 90%;
+    height: 200px;
+  }
+  main section .projetos-container .projeto:hover {
+    width: 90%;
+  }
   main section .projetos-container .projeto img {
     height: 8em;
   }
@@ -587,9 +612,6 @@ footer {
   main section .projetos-container .projeto p {
     max-height: max-content;
     word-wrap: break-word; /* Ou overflow-wrap: break-word; */
-  }
-  main section .projetos-container .projeto:hover {
-    width: 20%;
   }
   main section form {
     padding: 2em 2em;
