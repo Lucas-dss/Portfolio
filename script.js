@@ -224,26 +224,51 @@ buttons_aparencia.forEach((button_aparencia) => {
 // menu (Mobile)
 const btn_menu = document.querySelector("header .btn-menu");
 const page_menu = document.querySelector("main .page-menu");
+let btns_menu = document.querySelectorAll(
+  "main .page-menu .page-container button",
+);
 const btn_menu_close = document.querySelector("main .page-menu .btn-close");
 
+function abrir_pagina_mobile(page) {
+  page.style.left = "0";
+  body.style.overflow = "hidden";
+}
+function fechar_pagina_mobile(page) {
+  page.style.left = "2000px";
+  body.style.overflow = "";
+}
+
 btn_menu.addEventListener("click", () => {
-  page_menu.style.left = "0";
+  abrir_pagina_mobile(page_menu);
+  btns_menu.forEach((button) => {
+    button.addEventListener("click", () => {
+      fechar_pagina_mobile(page_menu);
+    });
+  });
 });
 
 btn_menu_close.addEventListener("click", () => {
-  page_menu.style.left = "2000px";
+  fechar_pagina_mobile(page_menu);
 });
 
 const btn_pref = document.querySelector("header .btn-pref");
 const page_pref = document.querySelector("main .page-pref");
+let btns_pref = document.querySelectorAll(
+  "main .page-pref .page-container button",
+);
 const btn_pref_close = document.querySelector("main .page-pref .btn-close");
 
 btn_pref.addEventListener("click", () => {
-  page_pref.style.left = "0";
+  abrir_pagina_mobile(page_pref);
+  btns_pref.forEach((button) => {
+    button.addEventListener("click", () => {
+      fechar_pagina_mobile(page_pref);
+    });
+  });
 });
 
 btn_pref_close.addEventListener("click", () => {
-  page_pref.style.left = "2000px";
+  fechar_pagina_mobile(page_pref);
 });
 
 // === contato ===

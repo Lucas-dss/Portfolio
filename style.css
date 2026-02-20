@@ -57,8 +57,9 @@ header {
 }
 
 header .btns-lingua {
-  width: 10%;
+  width: 15%;
   display: flex;
+  justify-content: center;
 }
 
 header .btns-lingua .btn-lingua {
@@ -90,7 +91,7 @@ header .btns-lingua p {
 }
 
 header h1 a {
-  width: 70%;
+  width: 30%;
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -101,7 +102,7 @@ header h1 a {
 }
 
 header nav {
-  width: 20%;
+  width: 41.5%;
 }
 
 header nav ul {
@@ -195,7 +196,7 @@ main section {
   height: 400px;
   margin: 20px 0;
   padding: 20px 0;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .apresentacao-section {
@@ -237,7 +238,7 @@ main section h1 {
 }
 
 .dark-h1-projetos {
-  color: #000000cb;
+  color: #000000d2;
 }
 
 main section .apresentacao-div {
@@ -274,7 +275,7 @@ main section .apresentacao-container .titulo_bem_vindo {
 }
 
 .dark-h1-apresentacao {
-  color: #000000cb;
+  color: #000000d2;
   background-color: #ffffff73;
   backdrop-filter: blur(4px);
 }
@@ -329,7 +330,7 @@ main section .sobre-container {
   max-width: 800px;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -384,27 +385,32 @@ main section .projetos-container .projeto {
   height: 300px;
   padding: 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   transition: width 0.5s ease-in-out;
   background-size: cover;
   background-position: center;
+  border: 2px solid #1238449c;
 }
 
 main section .projetos-container .projeto h1,
 main section .projetos-container .projeto p {
   color: #000000d2;
-  background-color: #ffffff73;
+  background-color: #ffffff27;
   backdrop-filter: blur(4px);
 }
 
 .projeto::before {
   content: "";
   position: absolute;
-  inset: 1;
+  inset: 0;
   background: inherit;
-  filter: invert(0);
-  box-shadow: inset 0 0 100px 100px #000;
-  transition: filter 0.5s ease-in;
+  border-radius: 16px;
+  filter: invert(0) blur(4px) brightness(0.5);
+  box-shadow: inset 0 0 100px 10px #000;
+  transition:
+    box-shadow 0.5s ease-in,
+    filter 0.5s ease-in;
+  z-index: 0;
 }
 
 .projeto * {
@@ -412,12 +418,14 @@ main section .projetos-container .projeto p {
 }
 
 .dark-projeto {
-  border: 4px solid #4424129c;
-  box-shadow: inset 0 0 100px 10px #fff;
 }
 
 .dark-projeto::before {
-  filter: invert(0.75);
+  box-shadow: none;
+  filter: brightness(0.8);
+  transition:
+    box-shadow 0.5s ease-in,
+    filter 0.5s ease-in;
 }
 
 main section .projetos-container .projeto:nth-child(1) {
@@ -441,7 +449,8 @@ main section .projetos-container .projeto:hover {
 main section .projetos-container .projeto img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid #1238449c;
 }
 
 main section .projetos-container .projeto p {
@@ -484,18 +493,19 @@ main section .projetos-container .projeto p {
 main .contato div {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px 0 0 0;
 }
 
 .dark-h1-contato {
-  background-color: #000000ad;
+  color: #000000d2;
+  backdrop-filter: blur(4px);
 }
 
 main section form {
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 }
 
 main section form label {
@@ -729,7 +739,7 @@ footer {
     display: none;
   }
   .apresentacao-section {
-    margin-top: 92px;
+    margin-top: 50px;
   }
   main section .apresentacao-div {
     flex-direction: column;
