@@ -99,8 +99,8 @@ const body = document.body;
 const header = document.querySelector("header");
 const header_h1_a = document.querySelector("header h1 a");
 let header_as = document.querySelectorAll("header nav ul li a");
-const button_aparencia = document.querySelector(".btn-aparencia");
-const btn_aparencia_icon = document.querySelector(".btn-aparencia img");
+let buttons_aparencia = document.querySelectorAll(".btn-aparencia");
+let btns_aparencia_icon = document.querySelectorAll(".btn-aparencia img");
 // main
 const apresentacao = document.querySelector(".apresentacao-section");
 const titulo_bem_vindo = document.querySelector(".titulo_bem_vindo h1");
@@ -131,14 +131,18 @@ function remove_aparencia(elemento, css) {
 
 function tema_escuro() {
   localStorage.setItem("tema_atual", "escuro");
-  btn_aparencia_icon.src = "img/icons/sun.png";
+  btns_aparencia_icon.forEach((btn_aparencia_icon) => {
+    btn_aparencia_icon.src = "img/icons/sun.png";
+  });
   remove_aparencia(body, "dark-body");
   remove_aparencia(header, "dark-header");
   remove_aparencia(header_h1_a, "dark-header-h1-a");
   header_as.forEach((header_a) => {
     remove_aparencia(header_a, "dark-header-a");
   });
-  remove_aparencia(button_aparencia, "dark-btn-aparencia");
+  buttons_aparencia.forEach((button_aparencia) => {
+    remove_aparencia(button_aparencia, "dark-btn-aparencia");
+  });
   // main
   remove_aparencia(apresentacao, "dark-apresentacao");
   remove_aparencia(titulo_bem_vindo, "dark-h1-apresentacao");
@@ -161,14 +165,18 @@ function tema_escuro() {
 
 function tema_claro() {
   localStorage.setItem("tema_atual", "claro");
-  btn_aparencia_icon.src = "img/icons/moon.png";
+  btns_aparencia_icon.forEach((btn_aparencia_icon) => {
+    btn_aparencia_icon.src = "img/icons/moon.png";
+  });
   add_aparencia(body, "dark-body");
   add_aparencia(header, "dark-header");
   add_aparencia(header_h1_a, "dark-header-h1-a");
   header_as.forEach((header_a) => {
     add_aparencia(header_a, "dark-header-a");
   });
-  add_aparencia(button_aparencia, "dark-btn-aparencia");
+  buttons_aparencia.forEach((button_aparencia) => {
+    add_aparencia(button_aparencia, "dark-btn-aparencia");
+  });
   // main
   add_aparencia(apresentacao, "dark-apresentacao");
   add_aparencia(titulo_bem_vindo, "dark-h1-apresentacao");
@@ -198,16 +206,44 @@ if (tema_atual == "claro" || !tema_atual) {
   alert("esse valor é inválido.");
   tema_escuro();
 }
-button_aparencia.addEventListener("click", () => {
-  let tema_atual = localStorage.getItem("tema_atual");
-  if (tema_atual == "claro" || !tema_atual) {
-    tema_escuro();
-  } else if (tema_atual == "escuro") {
-    tema_claro();
-  } else {
-    alert("esse valor é inválido.");
-    tema_escuro();
-  }
+
+buttons_aparencia.forEach((button_aparencia) => {
+  button_aparencia.addEventListener("click", () => {
+    let tema_atual = localStorage.getItem("tema_atual");
+    if (tema_atual == "claro" || !tema_atual) {
+      tema_escuro();
+    } else if (tema_atual == "escuro") {
+      tema_claro();
+    } else {
+      alert("esse valor é inválido.");
+      tema_escuro();
+    }
+  });
+});
+
+// menu (Mobile)
+const btn_menu = document.querySelector("header .btn-menu");
+const page_menu = document.querySelector("main .page-menu");
+const btn_menu_close = document.querySelector("main .page-menu .btn-close");
+
+btn_menu.addEventListener("click", () => {
+  page_menu.style.left = "0";
+});
+
+btn_menu_close.addEventListener("click", () => {
+  page_menu.style.left = "2000px";
+});
+
+const btn_pref = document.querySelector("header .btn-pref");
+const page_pref = document.querySelector("main .page-pref");
+const btn_pref_close = document.querySelector("main .page-pref .btn-close");
+
+btn_pref.addEventListener("click", () => {
+  page_pref.style.left = "0";
+});
+
+btn_pref_close.addEventListener("click", () => {
+  page_pref.style.left = "2000px";
 });
 
 // === contato ===

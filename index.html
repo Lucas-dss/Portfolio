@@ -10,11 +10,6 @@
 
   <body>
     <header>
-      <div class="btns-lingua">
-        <button class="btn-lingua" data-lang="en"></button>
-        <p>|</p>
-        <button class="btn-lingua" data-lang="pt-br"></button>
-      </div>
       <h1><a href="#apresentacao">Lucas da Silva Sousa</a></h1>
       <nav>
         <ul>
@@ -29,11 +24,61 @@
           </li>
         </ul>
       </nav>
+      <div class="btns-lingua">
+        <button class="btn-lingua" data-lang="en"></button>
+        <p>|</p>
+        <button class="btn-lingua" data-lang="pt-br"></button>
+      </div>
       <button class="btn-aparencia">
         <img src="img/icons/sun.png" alt="botão de alterar a aparência/tema" />
       </button>
+      <!-- Cabeçalho para Mobile -->
+      <div class="btns-nav">
+        <button class="btn-pref">
+          <img src="img/icons/pref.png" alt="preferências do usuário" />
+        </button>
+        <button class="btn-menu">
+          <img src="img/icons/menu.png" alt="menu da navegação" />
+        </button>
+      </div>
     </header>
     <main>
+      <!-- Página do Menu para Mobile -->
+      <div class="page-menu">
+        <button class="btn-close">
+          <img src="img/icons/x.png" alt="fechar a janela" />
+        </button>
+        <div class="page-container">
+          <button>
+            <a href="#sobre" class="lang" data-key="sobre_mim">Sobre Mim</a>
+          </button>
+          <button>
+            <a href="#projetos" class="lang" data-key="projetos">Projetos</a>
+          </button>
+          <button>
+            <a href="#contato" class="lang" data-key="contato">Contato</a>
+          </button>
+        </div>
+      </div>
+      <!-- Página de Preferências para Mobile -->
+      <div class="page-pref">
+        <button class="btn-close">
+          <img src="img/icons/x.png" alt="fechar a janela" />
+        </button>
+        <div class="page-container">
+          <div class="btns-lingua">
+            <button class="btn-lingua" data-lang="en"></button>
+            <p>|</p>
+            <button class="btn-lingua" data-lang="pt-br"></button>
+          </div>
+          <button class="btn-aparencia">
+            <img
+              src="img/icons/sun.png"
+              alt="botão de alterar a aparência/tema"
+            />
+          </button>
+        </div>
+      </div>
       <!-- Seção de Apresentação -->
       <section class="apresentacao-section" id="apresentacao">
         <div class="apresentacao-div">
